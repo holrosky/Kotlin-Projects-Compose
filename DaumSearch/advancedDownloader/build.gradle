@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 32
+
+    defaultConfig {
+        applicationId "at.huber.youtubeDownloader"
+        minSdkVersion 14
+        targetSdkVersion 32
+        versionCode 5
+        versionName "2.1"
+    }
+    buildTypes {
+        release {
+            proguardFile 'proguard.cfg'
+            minifyEnabled true
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+}
+
+
+dependencies {
+    implementation project(':youtubeExtractor')
+    implementation 'org.aspectj:aspectjrt:1.8.13'
+    implementation 'com.googlecode.mp4parser:isoparser:1.1.22'
+}
